@@ -1,0 +1,5 @@
+1. Template embedding
+2. Crud + file Uploading
+3. Login session.
+4. Product fetching + dynamic navbar + slider.
+5. Search Functionality.
