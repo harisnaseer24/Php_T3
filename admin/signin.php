@@ -2,6 +2,9 @@
 include("./components/header.php");
 require_once("./config/connection.php");
 session_start();
+if(isset($_SESSION['admin_email']) && isset($_SESSION['isAdmin']) && $_SESSION['admin_email']== "admin@admin.com"){
+    header("location: index.php");
+    }
 
 if(isset($_POST["signin"])){
 // echo "<script>
@@ -16,9 +19,11 @@ $checkAdmin="SELECT * FROM admin where email= '$email' and password='$pass';";
 $run_checkAdmin= mysqli_query($connection,$checkAdmin) or die("cant get the user");
 
 if(mysqli_num_rows($run_checkAdmin) == 1 ){
+    $adminRow= mysqli_fetch_assoc($run_checkAdmin);
 
     $_SESSION["admin_email"]= $email;
     $_SESSION["isAdmin"]= true;
+    $_SESSION["username"]= $adminRow["username"];
     echo "
     <script>
      alert('Login Success');
