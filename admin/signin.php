@@ -11,7 +11,7 @@ if(isset($_POST["signin"])){
 //     alert('hi')
 // </script>";
 // \<\?php jskdfkjd\?\> prevent sql injection
-$email= mysqli_real_escape_string($connection, $_POST["email"]);      ;
+$email= mysqli_real_escape_string($connection, $_POST["email"]);      
 $pass= mysqli_real_escape_string($connection, $_POST["password"]);
 
 $checkAdmin="SELECT * FROM admin where email= '$email' and password='$pass';";
