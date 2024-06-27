@@ -9,8 +9,7 @@ include("./components/header.php");
         <div class="spinner-border text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
-
-<button?php 
+<?php 
 include("./components/nav.php");
 ?>
   
@@ -41,7 +40,7 @@ if(isset($_GET["pid"])){
                     <p><i class="fa fa-check text-primary me-3"></i>Price: Rs. <?=$product["price"]-10?></p>
                     <p><i class="fa fa-check text-primary me-3"></i><?=ucwords($product["cat_name"])?></p>
                     <form action="addtocart.php" method="post">
-                        <input class="form-control" name="id" type="hidden" value="<?=$pid?>">
+                        <input class="form-control" name="pid" type="hidden" value="<?=$pid?>">
                         <input class="form-control" name="price" type="hidden" value="<?=$product["price"]-10?>">
                         <input class="form-control" name="qty" type="number" placeholder="enter qty in kgs" value="1" require min="1" max="10">
                       
